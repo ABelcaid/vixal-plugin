@@ -1,0 +1,20 @@
+{
+  "name": "vixal",
+  "displayName": "VIXAL",
+  "version": "0.1.0",
+  "description": "Story planning and prompt direction for VIXAL manga, manhwa, webtoon, and comics workflows.",
+  "author": {
+    "name": "VIXAL Studios"
+  },
+  "homepage": "https://www.vixal.art",
+  "repository": "https://github.com/ABelcaid/vixal-skills",
+  "license": "MIT",
+  "keywords": [
+    "vixal",
+    "manga",
+    "manhwa",
+    "webtoon",
+    "comics",
+    "storytelling"
+  ]
+}

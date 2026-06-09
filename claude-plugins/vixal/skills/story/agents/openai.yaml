@@ -1,0 +1,4 @@
+interface:
+  display_name: "Vixal Story"
+  short_description: "Plan Vixal stories and page prompts"
+  default_prompt: "Use $vixal-story to turn my visual story idea into a Vixal project plan and page-generation prompts."

@@ -1,0 +1,30 @@
+{
+  "name": "vixal",
+  "owner": {
+    "name": "VIXAL Studios"
+  },
+  "description": "VIXAL plugins for visual story planning and generation workflows.",
+  "version": "0.1.0",
+  "plugins": [
+    {
+      "name": "vixal",
+      "displayName": "VIXAL",
+      "source": "./claude-plugins/vixal",
+      "description": "Story planning and prompt direction for VIXAL manga, manhwa, webtoon, and comics workflows.",
+      "version": "0.1.0",
+      "author": {
+        "name": "VIXAL Studios"
+      },
+      "homepage": "https://www.vixal.art",
+      "repository": "https://github.com/ABelcaid/vixal-skills",
+      "category": "Productivity",
+      "tags": [
+        "vixal",
+        "manga",
+        "manhwa",
+        "webtoon",
+        "comics"
+      ]
+    }
+  ]
+}
