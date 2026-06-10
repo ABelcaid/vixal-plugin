@@ -4,14 +4,14 @@
     "name": "VIXAL Studios"
   },
   "description": "VIXAL plugins for visual story planning and generation workflows.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "plugins": [
     {
       "name": "vixal",
       "displayName": "VIXAL",
       "source": "./claude-plugins/vixal",
-      "description": "Story planning and prompt direction for VIXAL manga, manhwa, webtoon, and comics workflows.",
-      "version": "0.1.0",
+      "description": "Story planning and prompt direction for VIXAL manga, manhwa, webtoon, and comics workflows, with the VIXAL MCP connector bundled.",
+      "version": "0.2.0",
       "author": {
         "name": "VIXAL Studios"
       },

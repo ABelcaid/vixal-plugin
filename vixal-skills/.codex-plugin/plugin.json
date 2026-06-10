@@ -1,6 +1,6 @@
 {
   "name": "vixal",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "VIXAL workflows for visual story planning and generation prompts.",
   "author": {
     "name": "VIXAL Studios",
@@ -17,6 +17,7 @@
     "storytelling"
   ],
   "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "VIXAL Plugin",
     "shortDescription": "Plan VIXAL stories and page prompts",

@@ -1,17 +1,19 @@
 # VIXAL Plugin
 
-VIXAL Plugin helps Claude, Claude Code, and Codex plan visual stories and work with VIXAL projects through the VIXAL OAuth MCP connector.
+VIXAL Plugin helps Claude, Claude Code, and Codex plan visual stories and work inside your VIXAL account.
 
 Use it to create story bibles, character sheets, chapter plans, page scripts, panel breakdowns, continuity checks, and VIXAL-ready generation prompts for manga, manhwa, webtoon, and comics projects.
 
+Step-by-step setup guide: https://www.vixal.art/plugins
+
 ## How It Works
 
-VIXAL uses two pieces together:
+The plugin ships two things together:
 
-- **VIXAL Plugin**: teaches the assistant the VIXAL story workflow.
-- **VIXAL MCP connector**: gives the assistant permission to work inside your VIXAL account after OAuth sign-in.
+- **VIXAL story skill**: teaches the assistant the VIXAL story workflow (`/vixal:story` in Claude Code, `$vixal-story` in Codex).
+- **Bundled VIXAL MCP server**: the plugin includes the VIXAL MCP connector configuration, so there is no manual connector setup. You only sign in with OAuth on first use.
 
-The connector uses:
+The bundled MCP endpoint is:
 
 ```text
 https://www.vixal.art/api/mcp
@@ -19,53 +21,22 @@ https://www.vixal.art/api/mcp
 
 No manual API token is required. Generation actions use your VIXAL credits, and generated images stay in your VIXAL canvas.
 
-## Install In Claude
-
-1. Open Claude and go to:
-
-```text
-Customize > Connectors > Add custom connector
-```
-
-2. Name the connector `VIXAL` and paste:
-
-```text
-https://www.vixal.art/api/mcp
-```
-
-3. Click **Add**, then **Connect**, and sign in with your VIXAL Google account.
-
-4. Install the VIXAL Plugin from Claude's plugin UI:
-
-```text
-Customize > Plugins > Create plugin
-```
-
-5. Upload:
-
-```text
-dist/vixal-plugin.zip
-```
-
-6. Start a new chat and use:
-
-```text
-/vixal:story
-```
-
 ## Install In Claude Code
 
-Add the marketplace:
+Add the marketplace and install the plugin:
 
 ```text
 /plugin marketplace add ABelcaid/vixal-plugin
-```
-
-Install the plugin:
-
-```text
 /plugin install vixal@vixal-plugin
 ```
+
+Approve the bundled `vixal` MCP server when prompted, then authenticate:
+
+```text
+/mcp
+```
+
+Select `vixal` and choose **Authenticate** to sign in with your VIXAL account in the browser.
 
 Use the VIXAL story workflow:
 
@@ -89,14 +60,7 @@ Open Codex, go to:
 /plugins
 ```
 
-Install **VIXAL Plugin**.
-
-Add the VIXAL MCP server:
-
-```toml
-[mcp_servers.vixal]
-url = "https://www.vixal.art/api/mcp"
-```
+Install **VIXAL Plugin**. The VIXAL MCP server ships with the plugin, so no `config.toml` edit is needed.
 
 Sign in with OAuth:
 
@@ -104,12 +68,38 @@ Sign in with OAuth:
 codex mcp login vixal
 ```
 
-## First Prompt
+## Install In Claude (web and desktop)
 
-After the plugin and connector are installed, start with:
+1. Open Claude and go to:
 
 ```text
-Use Vixal Story to turn my idea into a VIXAL project plan, then use my VIXAL connector to create the project and characters.
+Customize > Plugins > Add marketplace > Add from a repository
+```
+
+2. Paste the repository:
+
+```text
+ABelcaid/vixal-plugin
+```
+
+3. Install **VIXAL Plugin** from the marketplace.
+
+4. Connect the VIXAL connector when prompted and sign in with your VIXAL account.
+
+5. Start a new chat and use:
+
+```text
+/vixal:story
+```
+
+If your Claude client does not support marketplaces, upload `dist/vixal-plugin.zip` via `Customize > Plugins > Create plugin`, then add the connector manually under `Customize > Connectors > Add custom connector` with the URL `https://www.vixal.art/api/mcp` and connect.
+
+## First Prompt
+
+After the plugin is installed and you are signed in, start with:
+
+```text
+Use Vixal Story to turn my idea into a VIXAL project plan, then create the project and characters in VIXAL.
 ```
 
 ## Permissions

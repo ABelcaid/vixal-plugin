@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "vixal": {
+      "type": "http",
+      "url": "https://www.vixal.art/api/mcp"
+    }
+  }
+}
