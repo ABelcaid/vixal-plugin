@@ -1,11 +1,11 @@
 {
-  "name": "vixal",
+  "name": "vixal-plugin",
   "interface": {
-    "displayName": "Vixal"
+    "displayName": "VIXAL"
   },
   "plugins": [
     {
-      "name": "vixal-skills",
+      "name": "vixal",
       "source": {
         "source": "local",
         "path": "./vixal-skills"

@@ -1,122 +1,119 @@
-# Vixal Skills
+# VIXAL Plugin
 
-Installable Vixal skills and plugin packaging for AI-assisted manga, manhwa, webtoon, and comics creation.
+VIXAL Plugin helps Claude, Claude Code, and Codex plan visual stories and work with VIXAL projects through the VIXAL OAuth MCP connector.
 
-See [INSTALL.md](./INSTALL.md) for user-facing setup steps.
+Use it to create story bibles, character sheets, chapter plans, page scripts, panel breakdowns, continuity checks, and VIXAL-ready generation prompts for manga, manhwa, webtoon, and comics projects.
 
-## What Is Included
+## How It Works
 
-- `claude-plugins/vixal`: Claude plugin package for non-technical users.
-- `vixal-skills`: Codex plugin package for developers and power users.
-- `vixal-story` / `story`: Skill for story planning, character sheets, page scripts, panel breakdowns, continuity checks, and Vixal-ready generation prompts.
+VIXAL uses two pieces together:
 
-## Recommended Claude Setup
+- **VIXAL Plugin**: teaches the assistant the VIXAL story workflow.
+- **VIXAL MCP connector**: gives the assistant permission to work inside your VIXAL account after OAuth sign-in.
 
-Normal users should use the VIXAL connector plus the VIXAL Claude plugin:
-
-1. In Claude, connect the VIXAL MCP connector:
+The connector uses:
 
 ```text
 https://www.vixal.art/api/mcp
 ```
 
-2. Install the VIXAL plugin from Claude's plugin UI.
-3. Start with:
+No manual API token is required. Generation actions use your VIXAL credits, and generated images stay in your VIXAL canvas.
+
+## Install In Claude
+
+1. Open Claude and go to:
 
 ```text
-Use /vixal:story to turn my idea into a VIXAL project plan, then use my VIXAL connector to create the project and characters.
+Customize > Connectors > Add custom connector
 ```
 
-The connector controls VIXAL. The plugin teaches Claude how to plan stories, characters, chapters, page prompts, and generation steps.
-
-## Install In Claude Code From This Marketplace
-
-Add this repository as a Claude plugin marketplace:
+2. Name the connector `VIXAL` and paste:
 
 ```text
-/plugin marketplace add ABelcaid/vixal-skills
+https://www.vixal.art/api/mcp
 ```
 
-Then install:
+3. Click **Add**, then **Connect**, and sign in with your VIXAL Google account.
+
+4. Install the VIXAL Plugin from Claude's plugin UI:
 
 ```text
-/plugin install vixal@vixal
+Customize > Plugins > Create plugin
 ```
 
-After installation, use:
+5. Upload:
+
+```text
+dist/vixal-plugin.zip
+```
+
+6. Start a new chat and use:
 
 ```text
 /vixal:story
 ```
 
-## Install In Claude From ZIP
+## Install In Claude Code
 
-The Claude plugin folder is:
+Add the marketplace:
 
 ```text
-claude-plugins/vixal
+/plugin marketplace add ABelcaid/vixal-plugin
 ```
 
-Zip that folder and upload it through Claude's personal plugin flow. The ZIP must contain the `.claude-plugin/plugin.json` file and the `skills/story/SKILL.md` file.
+Install the plugin:
+
+```text
+/plugin install vixal@vixal-plugin
+```
+
+Use the VIXAL story workflow:
+
+```text
+/vixal:story
+```
+
+The plugin name is `vixal`. The marketplace name is `vixal-plugin`.
 
 ## Install In Codex
 
-Add this repository as a Codex plugin marketplace:
+Add the marketplace:
 
 ```bash
-codex plugin marketplace add ABelcaid/vixal-skills
+codex plugin marketplace add ABelcaid/vixal-plugin
 ```
 
-Then open Codex and install **Vixal Skills**:
+Open Codex, go to:
 
 ```text
 /plugins
 ```
 
-After installation, start a new thread and ask:
+Install **VIXAL Plugin**.
 
-```text
-Use Vixal Story to turn my manga idea into a Vixal project plan.
+Add the VIXAL MCP server:
+
+```toml
+[mcp_servers.vixal]
+url = "https://www.vixal.art/api/mcp"
 ```
 
-## Install As A Local Codex Skill
+Sign in with OAuth:
 
-If you only want the skill without the plugin wrapper, copy:
-
-```text
-vixal-skills/skills/vixal-story
+```bash
+codex mcp login vixal
 ```
 
-to:
+## First Prompt
+
+After the plugin and connector are installed, start with:
 
 ```text
-~/.codex/skills/vixal-story
+Use Vixal Story to turn my idea into a VIXAL project plan, then use my VIXAL connector to create the project and characters.
 ```
 
-Restart Codex after copying.
+## Permissions
 
-## Install In Claude
+After OAuth sign-in, the VIXAL connector can create and update projects, characters, and chapters, read your credit balance, start generation jobs, cancel generation jobs, and spend VIXAL credits when generation is requested.
 
-Claude and Claude Code can still use the standalone skill folder if you do not want the plugin wrapper:
-
-```text
-vixal-skills/skills/vixal-story
-```
-
-For Claude Code, copy it to:
-
-```text
-~/.claude/skills/vixal-story
-```
-
-For Claude.ai, the plugin route above is preferred.
-
-## Vixal MCP
-
-This repository does not include a Vixal MCP token. For Claude, connect the OAuth MCP connector with:
-
-```text
-https://www.vixal.art/api/mcp
-```
-
-For Codex or other clients that still use manual tokens, create a scoped token from your Vixal profile. Keep tokens private and revoke exposed tokens immediately.
+You can revoke the connection from your VIXAL profile at any time.

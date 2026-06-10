@@ -1,53 +1,67 @@
-# Install VIXAL In Claude And Codex
+# Install VIXAL Plugin
 
-## Claude For Normal Users
+VIXAL Plugin adds story planning, character creation, page scripting, panel breakdowns, continuity checks, and VIXAL-ready prompt workflows to Claude, Claude Code, and Codex.
 
-1. Connect VIXAL in Claude:
+To let the assistant work inside your VIXAL account, connect the VIXAL MCP endpoint with OAuth:
+
+```text
+https://www.vixal.art/api/mcp
+```
+
+Generated images stay in VIXAL. Generation actions use your VIXAL credits.
+
+## Claude
+
+1. Open Claude and go to:
 
 ```text
 Customize > Connectors > Add custom connector
-URL: https://www.vixal.art/api/mcp
 ```
 
-2. Install the VIXAL plugin:
+2. Use:
+
+```text
+Name: VIXAL
+URL: https://www.vixal.art/api/mcp
+OAuth Client ID: leave empty
+OAuth Client Secret: leave empty
+```
+
+3. Click **Add**, then **Connect**, and sign in with your VIXAL Google account.
+
+4. Open:
 
 ```text
 Customize > Plugins > Create plugin
 ```
 
-Upload:
+5. Upload:
 
 ```text
-dist/vixal-claude-plugin.zip
+dist/vixal-plugin.zip
 ```
 
-3. Start a new Claude chat and use:
+6. Start a new chat with:
 
 ```text
 /vixal:story
 ```
 
-Example prompt:
+## Claude Code
+
+Add the marketplace:
 
 ```text
-Use /vixal:story to turn my idea into a VIXAL project plan, then use my VIXAL connector to create the project and characters.
+/plugin marketplace add ABelcaid/vixal-plugin
 ```
 
-## Claude Code / Claude Desktop
-
-Add this marketplace:
+Install the plugin:
 
 ```text
-/plugin marketplace add ABelcaid/vixal-skills
+/plugin install vixal@vixal-plugin
 ```
 
-Install:
-
-```text
-/plugin install vixal@vixal
-```
-
-Use:
+Start the workflow:
 
 ```text
 /vixal:story
@@ -55,14 +69,37 @@ Use:
 
 ## Codex
 
-Add this marketplace:
+Add the marketplace:
 
 ```bash
-codex plugin marketplace add ABelcaid/vixal-skills
+codex plugin marketplace add ABelcaid/vixal-plugin
 ```
 
-Then install **Vixal Skills** from `/plugins`.
+Open Codex and install **VIXAL Plugin** from:
 
-## What The Plugin Does
+```text
+/plugins
+```
 
-The VIXAL plugin gives Claude story-direction and prompt-writing behavior. The VIXAL connector gives Claude permission to create projects, characters, chapters, and generation jobs inside VIXAL.
+Add the MCP server:
+
+```toml
+[mcp_servers.vixal]
+url = "https://www.vixal.art/api/mcp"
+```
+
+Sign in:
+
+```bash
+codex mcp login vixal
+```
+
+## Recommended First Request
+
+```text
+Use Vixal Story to turn my idea into a VIXAL project plan, then use my VIXAL connector to create the project and characters.
+```
+
+## Revoke Access
+
+Open your VIXAL profile and revoke the connected app. The assistant will no longer be able to use VIXAL tools until you connect again.

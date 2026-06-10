@@ -1,5 +1,5 @@
 {
-  "name": "vixal",
+  "name": "vixal-plugin",
   "owner": {
     "name": "VIXAL Studios"
   },
@@ -16,7 +16,7 @@
         "name": "VIXAL Studios"
       },
       "homepage": "https://www.vixal.art",
-      "repository": "https://github.com/ABelcaid/vixal-skills",
+      "repository": "https://github.com/ABelcaid/vixal-plugin",
       "category": "Productivity",
       "tags": [
         "vixal",
