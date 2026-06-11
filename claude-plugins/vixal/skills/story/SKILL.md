@@ -62,7 +62,7 @@ When Vixal MCP is available:
 - Use MCP for project creation, character creation, chapter creation, and generation only when the user asks to do work inside Vixal.
 - Do not request image binaries from MCP.
 - Expect Vixal generation results to return IDs, status, credits charged, and an open-in-Vixal URL.
-- If the user asks for generation, include provider preference only if they specify one or Vixal exposes it.
+- Model choice: Vixal generates with "gemini-3.1-flash-image-preview" (Nano Banana 2, fast, the default), "gemini-3-pro-image-preview" (Nano Banana Pro, highest quality), and "gpt-image-2" (GPT Image 2, OpenAI). Pass `model` on start_generation or start_image_edit to override per job, or set `defaultImageModel` on the project. Map user wording like "Nano Banana" or "GPT" to the matching id; omit the field when the user states no preference.
 
 ## Output Tone
 
