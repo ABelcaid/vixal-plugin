@@ -35,7 +35,7 @@
         "privacyPolicyURL": "https://www.vixal.art/en/privacy",
         "termsOfServiceURL": "https://www.vixal.art/en/terms",
         "defaultPrompt": [
-          "Use VIXAL Story to plan my manga.",
+          "Help me plan my manga in VIXAL.",
           "Write page prompts for my VIXAL project.",
           "Build a character sheet for my webtoon."
         ],

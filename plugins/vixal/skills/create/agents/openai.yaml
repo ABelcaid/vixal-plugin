@@ -1,7 +1,7 @@
 interface:
-  display_name: "VIXAL Story"
-  short_description: "Plan VIXAL stories and page prompts"
-  default_prompt: "Use VIXAL Story to turn my visual story idea into a VIXAL project plan and page generation prompts."
+  display_name: "Create a comic"
+  short_description: "Plan and generate comic pages"
+  default_prompt: "Help me turn my idea into a comic, then create the project and characters in VIXAL."
 dependencies:
   tools:
     - type: "mcp"

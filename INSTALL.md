@@ -37,7 +37,7 @@ Select `vixal`, choose **Authenticate**, and sign in with your VIXAL account in 
 Start the workflow:
 
 ```text
-/vixal:story
+/vixal:create
 ```
 
 ## Codex
@@ -81,7 +81,7 @@ ABelcaid/vixal-plugin
 5. Start a new chat with:
 
 ```text
-/vixal:story
+/vixal:create
 ```
 
 If your Claude client does not support marketplaces, upload `dist/vixal-plugin.zip` via `Customize > Plugins > Create plugin`, then add the connector manually:
@@ -97,7 +97,7 @@ OAuth Client Secret: leave empty
 ## Recommended First Request
 
 ```text
-Use Vixal Story to turn my idea into a VIXAL project plan, then create the project and characters in VIXAL.
+Help me turn my idea into a comic, then create the project and characters in VIXAL.
 ```
 
 ## Revoke Access
