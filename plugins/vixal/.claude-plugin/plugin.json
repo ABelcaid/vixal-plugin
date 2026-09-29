@@ -1,7 +1,7 @@
 {
   "name": "vixal",
   "displayName": "VIXAL",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Story planning and prompt direction for VIXAL manga, manhwa, webtoon, and comics workflows, with the VIXAL MCP connector bundled.",
   "mcpServers": "./.mcp.json",
   "author": {

@@ -1,0 +1,48 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "vixal",
+  "version": "0.3.0",
+  "description": "Story planning and prompt direction for VIXAL manga, manhwa, webtoon, and comics workflows, with the VIXAL MCP connector bundled.",
+  "author": {
+    "name": "VIXAL Studios",
+    "url": "https://www.vixal.art"
+  },
+  "homepage": "https://www.vixal.art",
+  "repository": "https://github.com/ABelcaid/vixal-plugin",
+  "license": "MIT",
+  "keywords": [
+    "vixal",
+    "manga",
+    "manhwa",
+    "webtoon",
+    "comics",
+    "storytelling"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "VIXAL",
+        "shortDescription": "Plan and generate comic pages",
+        "longDescription": "Plan manga, manhwa, webtoon, and western comics with story bibles, character sheets, page scripts, panel breakdowns, continuity checks, and page prompts you can generate directly in VIXAL. After you sign in, VIXAL can create projects, characters, and chapters in your account and start page generations. Generation uses your VIXAL credits, and generated pages stay in your VIXAL canvas.",
+        "developerName": "VIXAL Studios",
+        "category": "Productivity",
+        "capabilities": [
+          "Interactive",
+          "Write"
+        ],
+        "websiteURL": "https://www.vixal.art",
+        "supportURL": "https://www.vixal.art/en/faq",
+        "privacyPolicyURL": "https://www.vixal.art/en/privacy",
+        "termsOfServiceURL": "https://www.vixal.art/en/terms",
+        "defaultPrompt": [
+          "Use VIXAL Story to plan my manga.",
+          "Write page prompts for my VIXAL project.",
+          "Build a character sheet for my webtoon."
+        ],
+        "brandColor": "#6C63F6",
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/logo.png"
+      }
+    }
+  }
+}

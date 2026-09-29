@@ -2,7 +2,7 @@
 
 VIXAL Plugin helps Claude, Claude Code, and Codex plan visual stories and work inside your VIXAL account.
 
-Use it to create story bibles, character sheets, chapter plans, page scripts, panel breakdowns, continuity checks, and VIXAL-ready generation prompts for manga, manhwa, webtoon, and comics projects.
+Use it to create story bibles, character sheets, chapter plans, page scripts, panel breakdowns, continuity checks, and page prompts you can generate directly in VIXAL for manga, manhwa, webtoon, and comics projects.
 
 Step-by-step setup guide: https://www.vixal.art/plugins
 
@@ -10,7 +10,7 @@ Step-by-step setup guide: https://www.vixal.art/plugins
 
 The plugin ships two things together:
 
-- **VIXAL story skill**: teaches the assistant the VIXAL story workflow (`/vixal:story` in Claude Code, `$vixal-story` in Codex).
+- **VIXAL story skill**: teaches the assistant the VIXAL story workflow (`/vixal:story` in Claude Code).
 - **Bundled VIXAL MCP server**: the plugin includes the VIXAL MCP connector configuration, so there is no manual connector setup. You only sign in with OAuth on first use.
 
 The bundled MCP endpoint is:

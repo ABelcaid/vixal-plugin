@@ -1,0 +1,11 @@
+interface:
+  display_name: "VIXAL Story"
+  short_description: "Plan VIXAL stories and page prompts"
+  default_prompt: "Use VIXAL Story to turn my visual story idea into a VIXAL project plan and page generation prompts."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "vixal"
+      description: "VIXAL projects, characters, chapters, and page generation"
+      transport: "streamable_http"
+      url: "https://www.vixal.art/api/mcp"

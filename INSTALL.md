@@ -1,6 +1,6 @@
 # Install VIXAL Plugin
 
-VIXAL Plugin adds story planning, character creation, page scripting, panel breakdowns, continuity checks, and VIXAL-ready prompt workflows to Claude, Claude Code, and Codex.
+VIXAL Plugin adds story planning, character creation, page scripting, panel breakdowns, continuity checks, and prompt workflows you can generate directly in VIXAL to Claude, Claude Code, and Codex.
 
 The plugin bundles the VIXAL MCP connector, so you do not need to add a connector manually. On first use you sign in with OAuth:
 
