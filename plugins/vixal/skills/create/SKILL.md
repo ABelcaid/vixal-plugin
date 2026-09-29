@@ -1,9 +1,9 @@
 ---
-name: story
+name: create
 description: Create VIXAL-ready visual storytelling assets for manga, manhwa, webtoon, and western comics, including story concepts, project story bibles, character sheets, page scripts, panel-by-panel breakdowns, dialogue/SFX, continuity checks, and image-generation prompts. Use when the user asks to develop a visual story, plan pages or chapters, prepare prompts for VIXAL image generation, or use the VIXAL connector.
 ---
 
-# VIXAL Story
+# Create a comic
 
 ## Core Rule
 

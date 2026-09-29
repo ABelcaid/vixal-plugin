@@ -1,6 +1,6 @@
 # Install VIXAL Plugin
 
-VIXAL Plugin adds story planning, character creation, page scripting, panel breakdowns, continuity checks, and VIXAL-ready prompt workflows to Claude, Claude Code, and Codex.
+VIXAL Plugin adds story planning, character creation, page scripting, panel breakdowns, continuity checks, and prompt workflows you can generate directly in VIXAL to Claude, Claude Code, and Codex.
 
 The plugin bundles the VIXAL MCP connector, so you do not need to add a connector manually. On first use you sign in with OAuth:
 
@@ -37,7 +37,7 @@ Select `vixal`, choose **Authenticate**, and sign in with your VIXAL account in 
 Start the workflow:
 
 ```text
-/vixal:story
+/vixal:create
 ```
 
 ## Codex
@@ -81,7 +81,7 @@ ABelcaid/vixal-plugin
 5. Start a new chat with:
 
 ```text
-/vixal:story
+/vixal:create
 ```
 
 If your Claude client does not support marketplaces, upload `dist/vixal-plugin.zip` via `Customize > Plugins > Create plugin`, then add the connector manually:
@@ -97,7 +97,7 @@ OAuth Client Secret: leave empty
 ## Recommended First Request
 
 ```text
-Use Vixal Story to turn my idea into a VIXAL project plan, then create the project and characters in VIXAL.
+Help me turn my idea into a comic, then create the project and characters in VIXAL.
 ```
 
 ## Revoke Access

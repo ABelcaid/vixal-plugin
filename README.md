@@ -2,7 +2,7 @@
 
 VIXAL Plugin helps Claude, Claude Code, and Codex plan visual stories and work inside your VIXAL account.
 
-Use it to create story bibles, character sheets, chapter plans, page scripts, panel breakdowns, continuity checks, and VIXAL-ready generation prompts for manga, manhwa, webtoon, and comics projects.
+Use it to create story bibles, character sheets, chapter plans, page scripts, panel breakdowns, continuity checks, and page prompts you can generate directly in VIXAL for manga, manhwa, webtoon, and comics projects.
 
 Step-by-step setup guide: https://www.vixal.art/plugins
 
@@ -10,7 +10,7 @@ Step-by-step setup guide: https://www.vixal.art/plugins
 
 The plugin ships two things together:
 
-- **VIXAL story skill**: teaches the assistant the VIXAL story workflow (`/vixal:story` in Claude Code, `$vixal-story` in Codex).
+- **Create a comic skill**: teaches the assistant the VIXAL comic workflow (`/vixal:create` in Claude Code).
 - **Bundled VIXAL MCP server**: the plugin includes the VIXAL MCP connector configuration, so there is no manual connector setup. You only sign in with OAuth on first use.
 
 The bundled MCP endpoint is:
@@ -38,10 +38,10 @@ Approve the bundled `vixal` MCP server when prompted, then authenticate:
 
 Select `vixal` and choose **Authenticate** to sign in with your VIXAL account in the browser.
 
-Use the VIXAL story workflow:
+Create a comic:
 
 ```text
-/vixal:story
+/vixal:create
 ```
 
 The plugin name is `vixal`. The marketplace name is `vixal-plugin`.
@@ -89,7 +89,7 @@ ABelcaid/vixal-plugin
 5. Start a new chat and use:
 
 ```text
-/vixal:story
+/vixal:create
 ```
 
 If your Claude client does not support marketplaces, upload `dist/vixal-plugin.zip` via `Customize > Plugins > Create plugin`, then add the connector manually under `Customize > Connectors > Add custom connector` with the URL `https://www.vixal.art/api/mcp` and connect.
@@ -99,7 +99,7 @@ If your Claude client does not support marketplaces, upload `dist/vixal-plugin.z
 After the plugin is installed and you are signed in, start with:
 
 ```text
-Use Vixal Story to turn my idea into a VIXAL project plan, then create the project and characters in VIXAL.
+Help me turn my idea into a comic, then create the project and characters in VIXAL.
 ```
 
 ## Permissions

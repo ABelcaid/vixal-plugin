@@ -1,0 +1,11 @@
+interface:
+  display_name: "Create a comic"
+  short_description: "Plan and generate comic pages"
+  default_prompt: "Help me turn my idea into a comic, then create the project and characters in VIXAL."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "vixal"
+      description: "VIXAL projects, characters, chapters, and page generation"
+      transport: "streamable_http"
+      url: "https://www.vixal.art/api/mcp"

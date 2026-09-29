@@ -8,7 +8,7 @@
       "name": "vixal",
       "source": {
         "source": "local",
-        "path": "./vixal-skills"
+        "path": "./plugins/vixal"
       },
       "policy": {
         "installation": "AVAILABLE",
