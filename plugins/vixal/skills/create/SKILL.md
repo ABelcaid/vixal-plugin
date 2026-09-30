@@ -32,6 +32,15 @@ Act as a production story director, storyboard editor, and prompt engineer for V
    - Read `references/style-rules.md` before producing page prompts, panel descriptions, character sheets, or visual generation prompts.
    - Apply only the chosen tradition's rules unless the user requests a hybrid.
 
+4. Use the panel reference when planning pages.
+   - Read `references/panel-layout-rules.md` before planning a comic page, a panel breakdown, a multi-panel generation prompt, or chapter pages.
+   - Plan the storytelling first, then choose the panel structure. Do not choose a grid first and force the story into it.
+   - Panel count and layout come from pacing, not from fixed defaults: story beat, then pacing, then panel hierarchy, then layout, then framing.
+
+5. Honor explicit requests.
+   - These rules prevent accidental defaults. If the user asks for neon lighting, glossy rendering, particles, heavy detail, cinematic color grading, an unusual layout, or a fixed panel count, do what they asked.
+   - Never solve a style problem by changing a character's identity. Keep design, clothing, age, facial features, recurring props, and visual anchors consistent.
+
 ## Continuity Standards
 
 Maintain cause-and-effect, spatial logic, emotional logic, and temporal logic between panels and pages.
@@ -54,7 +63,19 @@ For a Vixal page or panel generation prompt, output:
 6. Continuity Check
 7. Copy-Ready Vixal Prompt
 
-Keep prompts concrete: camera angle, character action, expression, composition, lighting, environment, style constraints, reading direction, and panel layout. Avoid vague mood-only prompting.
+In the Panel-by-Panel Description, define for each panel:
+- Panel N: purpose or story beat
+- Size and position on the page
+- Shot and framing
+- Characters and action, with expression and body language
+- Background and spatial information
+- Lighting or effects, only if the beat needs them
+- Dialogue and SFX
+- Continuity from the previous panel
+
+Each panel description must explain the story beat, framing, subject and action, and how it connects to the previous and next panel.
+
+Keep the Copy-Ready Vixal Prompt compact. State the rendering method once in the global style line and do not repeat it per panel; long prompts make image models worse. Describe how the page is drawn (line weight, ink, shading, color treatment, background treatment) instead of listing things to avoid, because naming unwanted effects in an image prompt can pull the model toward them. Avoid vague mood-only prompting and empty quality boosters such as "masterpiece", "8K", "ultra detailed", "highly detailed", "stunning", or "epic".
 
 ## Vixal MCP Use
 
@@ -62,6 +83,7 @@ When Vixal MCP is available:
 - Use MCP for project creation, character creation, chapter creation, and generation only when the user asks to do work inside Vixal.
 - Do not request image binaries from MCP.
 - Expect Vixal generation results to return IDs, status, credits charged, and an open-in-Vixal URL.
+- Comic pages: when your prompt describes its own panel layout, call `start_generation` with `outputType: "Panel"` and `scenePreset: "custom"`. Without `"custom"`, Vixal applies the project's preset layout (a fixed panel count) and overrides the layout you planned.
 - Character sheets: create the character first with `create_character`, then call `start_generation` with `outputType: "Multi-angle Character Sheet"` and that `characterId`. The sheet is saved as the character's reference image and named after them. Pass `outputType` on the job instead of changing the project default.
 - Model choice: the `model` field on start_generation and start_image_edit lists every available model with its id, name, and purpose; treat that list as the source of truth. Map the user's wording to the matching id (for example "Nano Banana Pro" or "GPT Image 2.5 Flare"). If the wording fits more than one model, such as just "GPT" or "Nano Banana", ask which one. Omit the field when the user states no preference so the project default applies, or set `defaultImageModel` with update_project to change that default.
 
