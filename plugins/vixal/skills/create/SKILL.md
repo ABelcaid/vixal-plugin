@@ -62,7 +62,8 @@ When Vixal MCP is available:
 - Use MCP for project creation, character creation, chapter creation, and generation only when the user asks to do work inside Vixal.
 - Do not request image binaries from MCP.
 - Expect Vixal generation results to return IDs, status, credits charged, and an open-in-Vixal URL.
-- Model choice: Vixal generates with "gemini-3.1-flash-image-preview" (Nano Banana 2, fast, the default), "gemini-3-pro-image-preview" (Nano Banana Pro, highest quality), and "gpt-image-2" (GPT Image 2, OpenAI). Pass `model` on start_generation or start_image_edit to override per job, or set `defaultImageModel` on the project. Map user wording like "Nano Banana" or "GPT" to the matching id; omit the field when the user states no preference.
+- Character sheets: create the character first with `create_character`, then call `start_generation` with `outputType: "Multi-angle Character Sheet"` and that `characterId`. The sheet is saved as the character's reference image and named after them. Pass `outputType` on the job instead of changing the project default.
+- Model choice: the `model` field on start_generation and start_image_edit lists every available model with its id, name, and purpose; treat that list as the source of truth. Map the user's wording to the matching id (for example "Nano Banana Pro" or "GPT Image 2.5 Flare"). If the wording fits more than one model, such as just "GPT" or "Nano Banana", ask which one. Omit the field when the user states no preference so the project default applies, or set `defaultImageModel` with update_project to change that default.
 
 ## Output Tone
 
